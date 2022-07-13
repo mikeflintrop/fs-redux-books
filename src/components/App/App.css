@@ -1,17 +1,25 @@
 header {
   text-align: center;
   height: 45px;
-  background-color: lightblue;
+  /* background-color: darkblue; */
+  background: linear-gradient(45deg, lightgreen, darkblue);
   margin-bottom: 1rem;
+  color: white;
 }
 
 header h1 {
   margin: 0;
 }
 
+body {
+  background-color: rgb(29, 28, 28);
+  /* background: linear-gradient(45deg, darkgray, lightgray); */
+}
+
 main {
   width: 90%;
   margin: auto;
+  background: linear-gradient(45deg, orange, red);
 }
 
 section {

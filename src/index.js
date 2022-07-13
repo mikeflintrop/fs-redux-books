@@ -10,7 +10,15 @@ import * as serviceWorker from './serviceWorker';
 
 const bookList = (state = [], action) => {
   // TODO - set book list with data from server
-  return state;
+  switch (action.type) {
+    case 'SET_BOOK_LIST':
+      // replace value of book list
+      // payload is arrray of all books
+      // do not need spread operator - do not need old value
+      return action.payload;
+    default:
+      return state;
+  }
 }
 
 const reduxStore = createStore(
