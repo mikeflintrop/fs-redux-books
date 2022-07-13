@@ -35,7 +35,9 @@ function App() {
     <div className="App">
       <header><h1>Books w/ Redux!</h1></header>
       <main>
-        <BookForm />
+        <BookForm 
+          fetchBookList = {fetchBookList}
+          />
         <BookList />
       </main>
     </div>

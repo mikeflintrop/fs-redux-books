@@ -1,6 +1,7 @@
+import axios from 'axios';
 import {useState} from 'react';
 
-function BookForm() {
+function BookForm({fetchBookList}) {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
@@ -10,6 +11,16 @@ function BookForm() {
     console.log(`Adding book`, {title, author});
 
     // TODO - axios request to server to add book
+    axios.post('/books', {title, author})
+    .then(response => {
+      fetchBookList();
+      setTitle('');
+      setAuthor('');
+    })
+    .catch(error => {
+      console.log('Error POSTing new book:', error)
+      alert('Server error POSTing new book')
+    })
 
   };
 
